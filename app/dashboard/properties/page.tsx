@@ -83,7 +83,7 @@ export default function PropertiesPage() {
         onCollapsedChange={setSidebarCollapsed}
       />
       
-      <main className={`transition-all duration-300 ${sidebarCollapsed ? 'lg:ml-16' : 'lg:ml-64'}`}
+      <main className={`transition-all duration-300 ${sidebarCollapsed ? 'lg:ml-16' : 'lg:ml-64'}`}>
         <Header onMenuClick={() => setMobileMenuOpen(true)} />
         
         <div className="p-4 sm:p-6">
