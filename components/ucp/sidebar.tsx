@@ -37,12 +37,19 @@ const navItems = [
 interface SidebarProps {
   mobileOpen?: boolean
   onMobileClose?: () => void
+  collapsed?: boolean
+  onCollapsedChange?: (collapsed: boolean) => void
 }
 
-export function Sidebar({ mobileOpen = false, onMobileClose }: SidebarProps) {
-  const [collapsed, setCollapsed] = useState(false)
+export function Sidebar({ mobileOpen = false, onMobileClose, collapsed = false, onCollapsedChange }: SidebarProps) {
   const pathname = usePathname()
   const router = useRouter()
+  
+  const handleCollapse = () => {
+    if (onCollapsedChange) {
+      onCollapsedChange(!collapsed)
+    }
+  }
 
   // Close mobile sidebar on route change
   useEffect(() => {
@@ -174,7 +181,7 @@ export function Sidebar({ mobileOpen = false, onMobileClose }: SidebarProps) {
       {/* Collapse Toggle - hidden on mobile */}
       {!mobileOpen && (
         <button
-          onClick={() => setCollapsed(!collapsed)}
+          onClick={handleCollapse}
           className="absolute -right-3 top-20 hidden h-6 w-6 items-center justify-center rounded-full border border-border/50 bg-card text-muted-foreground shadow-lg transition-all duration-200 hover:scale-110 hover:bg-primary hover:text-primary-foreground lg:flex"
         >
           {collapsed ? (

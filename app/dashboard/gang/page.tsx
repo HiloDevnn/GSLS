@@ -59,15 +59,18 @@ const recentActivity = [
 
 export default function GangPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
   
   return (
     <div className="min-h-screen bg-background">
       <Sidebar 
         mobileOpen={mobileMenuOpen} 
-        onMobileClose={() => setMobileMenuOpen(false)} 
+        onMobileClose={() => setMobileMenuOpen(false)}
+        collapsed={sidebarCollapsed}
+        onCollapsedChange={setSidebarCollapsed}
       />
       
-      <main className="transition-all duration-300 lg:ml-64">
+      <main className={`transition-all duration-300 ${sidebarCollapsed ? 'lg:ml-16' : 'lg:ml-64'}`}
         <Header onMenuClick={() => setMobileMenuOpen(true)} />
         
         <div className="p-4 sm:p-6">
