@@ -124,9 +124,6 @@ export function Sidebar({ mobileOpen = false, onMobileClose }: SidebarProps) {
                     collapsed && !mobileOpen && "justify-center px-2"
                   )}
                 >
-                  {isActive && (
-                    <div className="absolute left-0 top-1/2 h-8 w-1 -translate-y-1/2 rounded-r-full bg-primary-foreground" />
-                  )}
                   <item.icon className={cn("h-5 w-5 shrink-0 transition-transform duration-200", !isActive && "group-hover:scale-110")} />
                   {(!collapsed || mobileOpen) && <span>{item.label}</span>}
                   {item.adminOnly && (!collapsed || mobileOpen) && (

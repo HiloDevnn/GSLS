@@ -137,34 +137,34 @@ export default function CharacterSelectPage() {
 
       {/* Header */}
       <header className="relative z-10 border-b border-white/5">
-        <div className="mx-auto max-w-7xl px-6 py-4">
-          <div className="glass-strong rounded-2xl px-6 py-3">
+        <div className="mx-auto max-w-7xl px-3 py-3 sm:px-6 sm:py-4">
+          <div className="glass-strong rounded-xl px-3 py-2 sm:rounded-2xl sm:px-6 sm:py-3">
             <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2 sm:gap-3">
                 <div className="relative">
                   <div className="absolute inset-0 bg-primary/40 blur-xl rounded-xl" />
-                  <div className="relative flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-primary/80">
-                    <Gamepad2 className="h-5 w-5 text-primary-foreground" />
+                  <div className="relative flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-primary/80 sm:h-11 sm:w-11 sm:rounded-xl">
+                    <Gamepad2 className="h-4 w-4 text-primary-foreground sm:h-5 sm:w-5" />
                   </div>
                 </div>
                 <div>
-                  <h1 className="text-lg font-bold text-foreground">Lost Roleplay</h1>
-                  <p className="text-xs text-muted-foreground">Character Selection</p>
+                  <h1 className="text-base font-bold text-foreground sm:text-lg">Lost Roleplay</h1>
+                  <p className="text-[10px] text-muted-foreground sm:text-xs">Character Selection</p>
                 </div>
               </div>
-              <div className="flex items-center gap-2">
-                <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground hover:bg-white/5">
-                  <Settings className="mr-2 h-4 w-4" />
-                  Settings
+              <div className="flex items-center gap-1 sm:gap-2">
+                <Button variant="ghost" size="sm" className="h-8 px-2 text-muted-foreground hover:text-foreground hover:bg-white/5 sm:h-9 sm:px-3">
+                  <Settings className="h-4 w-4 sm:mr-2" />
+                  <span className="hidden sm:inline">Settings</span>
                 </Button>
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="text-muted-foreground hover:text-foreground hover:bg-white/5"
+                  className="h-8 px-2 text-muted-foreground hover:text-foreground hover:bg-white/5 sm:h-9 sm:px-3"
                   onClick={() => router.push("/")}
                 >
-                  <LogOut className="mr-2 h-4 w-4" />
-                  Logout
+                  <LogOut className="h-4 w-4 sm:mr-2" />
+                  <span className="hidden sm:inline">Logout</span>
                 </Button>
               </div>
             </div>
@@ -173,21 +173,21 @@ export default function CharacterSelectPage() {
       </header>
 
       {/* Main Content */}
-      <main className="relative z-10 mx-auto max-w-7xl px-6 py-12">
+      <main className="relative z-10 mx-auto max-w-7xl px-3 py-6 sm:px-6 sm:py-12">
         {/* Title Section */}
-        <div className="mb-12 text-center">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full glass px-5 py-2">
-            <Sparkles className="h-4 w-4 text-primary" />
-            <span className="text-sm font-semibold text-primary">Choose Your Identity</span>
+        <div className="mb-6 text-center sm:mb-12">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 sm:mb-6 sm:px-5 sm:py-2">
+            <Sparkles className="h-3 w-3 text-primary sm:h-4 sm:w-4" />
+            <span className="text-xs font-semibold text-primary sm:text-sm">Choose Your Identity</span>
           </div>
-          <h2 className="mb-4 text-4xl font-bold text-foreground">Select Character</h2>
-          <p className="text-muted-foreground text-lg">
+          <h2 className="mb-2 text-2xl font-bold text-foreground sm:mb-4 sm:text-4xl">Select Character</h2>
+          <p className="text-sm text-muted-foreground sm:text-lg">
             Choose a character to enter Los Santos or create a new one
           </p>
         </div>
 
         {/* Characters Grid */}
-        <div className="grid gap-6 lg:grid-cols-3 mb-12">
+        <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3 mb-6 sm:mb-12">
           {/* Character Cards */}
           {characters.map((char) => (
             <div
@@ -211,27 +211,27 @@ export default function CharacterSelectPage() {
               )}
 
               {/* Character Header */}
-              <div className="relative border-b border-white/5 bg-gradient-to-r from-primary/10 via-primary/5 to-transparent p-5">
-                <div className="flex items-start gap-4">
+              <div className="relative border-b border-white/5 bg-gradient-to-r from-primary/10 via-primary/5 to-transparent p-3 sm:p-5">
+                <div className="flex items-start gap-3 sm:gap-4">
                   {/* Avatar */}
                   <div className="relative">
-                    <div className="flex h-18 w-18 items-center justify-center rounded-2xl bg-white/5 ring-2 ring-white/10">
-                      <User className="h-9 w-9 text-muted-foreground" />
+                    <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-white/5 ring-2 ring-white/10 sm:h-18 sm:w-18 sm:rounded-2xl">
+                      <User className="h-7 w-7 text-muted-foreground sm:h-9 sm:w-9" />
                     </div>
-                    <div className="absolute -bottom-2 -right-2 flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-primary to-primary/80 text-sm font-bold text-primary-foreground shadow-lg shadow-primary/30">
+                    <div className="absolute -bottom-1.5 -right-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-primary to-primary/80 text-xs font-bold text-primary-foreground shadow-lg shadow-primary/30 sm:-bottom-2 sm:-right-2 sm:h-8 sm:w-8 sm:text-sm">
                       {char.level}
                     </div>
                   </div>
 
                   {/* Name & Faction */}
-                  <div className="flex-1 pt-1">
-                    <h3 className="mb-2 text-xl font-bold text-foreground">{char.name}</h3>
+                  <div className="flex-1 min-w-0 pt-0.5 sm:pt-1">
+                    <h3 className="mb-1.5 truncate text-base font-bold text-foreground sm:mb-2 sm:text-xl">{char.name}</h3>
                     {char.faction ? (
-                      <Badge className="bg-primary/20 text-primary border-0 font-medium">
-                        {char.faction}
+                      <Badge className="bg-primary/20 text-primary border-0 font-medium text-[10px] sm:text-xs">
+                        <span className="truncate max-w-[120px] sm:max-w-none">{char.faction}</span>
                       </Badge>
                     ) : (
-                      <Badge variant="outline" className="text-muted-foreground border-white/10">
+                      <Badge variant="outline" className="text-muted-foreground border-white/10 text-[10px] sm:text-xs">
                         Civilian
                       </Badge>
                     )}
@@ -240,45 +240,45 @@ export default function CharacterSelectPage() {
               </div>
 
               {/* Character Stats */}
-              <div className="p-5">
+              <div className="p-3 sm:p-5">
                 {/* Health & Armor Bars */}
-                <div className="mb-5 space-y-3">
-                  <div className="flex items-center gap-3">
-                    <Heart className="h-4 w-4 text-red-500" />
-                    <div className="h-2.5 flex-1 overflow-hidden rounded-full bg-white/5">
+                <div className="mb-3 space-y-2 sm:mb-5 sm:space-y-3">
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <Heart className="h-3.5 w-3.5 text-red-500 sm:h-4 sm:w-4" />
+                    <div className="h-2 flex-1 overflow-hidden rounded-full bg-white/5 sm:h-2.5">
                       <div
                         className="h-full rounded-full bg-gradient-to-r from-red-600 to-red-400 transition-all duration-500"
                         style={{ width: `${char.health}%` }}
                       />
                     </div>
-                    <span className="w-8 text-right text-xs font-medium text-muted-foreground">{char.health}</span>
+                    <span className="w-6 text-right text-[10px] font-medium text-muted-foreground sm:w-8 sm:text-xs">{char.health}</span>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <Shield className="h-4 w-4 text-blue-500" />
-                    <div className="h-2.5 flex-1 overflow-hidden rounded-full bg-white/5">
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <Shield className="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4" />
+                    <div className="h-2 flex-1 overflow-hidden rounded-full bg-white/5 sm:h-2.5">
                       <div
                         className="h-full rounded-full bg-gradient-to-r from-blue-600 to-blue-400 transition-all duration-500"
                         style={{ width: `${char.armor}%` }}
                       />
                     </div>
-                    <span className="w-8 text-right text-xs font-medium text-muted-foreground">{char.armor}</span>
+                    <span className="w-6 text-right text-[10px] font-medium text-muted-foreground sm:w-8 sm:text-xs">{char.armor}</span>
                   </div>
                 </div>
 
                 {/* Info Grid */}
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-2 gap-2 sm:gap-3">
                   {[
                     { icon: DollarSign, label: 'Cash', value: formatMoney(char.money), highlight: true },
                     { icon: DollarSign, label: 'Bank', value: formatMoney(char.bank) },
                     { icon: Clock, label: 'Play Time', value: char.playTime },
                     { icon: Briefcase, label: 'Job', value: char.job },
                   ].map((item) => (
-                    <div key={item.label} className="rounded-xl bg-white/5 p-3 transition-colors hover:bg-white/10">
-                      <div className="mb-1.5 flex items-center gap-1.5 text-xs text-muted-foreground">
-                        <item.icon className="h-3 w-3" />
+                    <div key={item.label} className="rounded-lg bg-white/5 p-2 transition-colors hover:bg-white/10 sm:rounded-xl sm:p-3">
+                      <div className="mb-1 flex items-center gap-1 text-[10px] text-muted-foreground sm:mb-1.5 sm:gap-1.5 sm:text-xs">
+                        <item.icon className="h-2.5 w-2.5 sm:h-3 sm:w-3" />
                         {item.label}
                       </div>
-                      <p className={`font-semibold truncate ${item.highlight ? 'text-emerald-500' : 'text-foreground'}`}>
+                      <p className={`text-xs font-semibold truncate sm:text-sm ${item.highlight ? 'text-emerald-500' : 'text-foreground'}`}>
                         {item.value}
                       </p>
                     </div>
@@ -286,13 +286,13 @@ export default function CharacterSelectPage() {
                 </div>
 
                 {/* Location */}
-                <div className="mt-4 flex items-center gap-3 rounded-xl bg-white/5 px-4 py-3">
-                  <MapPin className="h-4 w-4 text-primary" />
-                  <span className="text-sm text-muted-foreground truncate">{char.lastLocation}</span>
+                <div className="mt-3 flex items-center gap-2 rounded-lg bg-white/5 px-3 py-2 sm:mt-4 sm:gap-3 sm:rounded-xl sm:px-4 sm:py-3">
+                  <MapPin className="h-3.5 w-3.5 shrink-0 text-primary sm:h-4 sm:w-4" />
+                  <span className="text-xs text-muted-foreground truncate sm:text-sm">{char.lastLocation}</span>
                 </div>
 
                 {/* Last Played */}
-                <p className="mt-4 text-center text-xs text-muted-foreground">
+                <p className="mt-3 text-center text-[10px] text-muted-foreground sm:mt-4 sm:text-xs">
                   Last played: {char.lastPlayed}
                 </p>
               </div>
@@ -335,14 +335,14 @@ export default function CharacterSelectPage() {
           {/* Create New Character Card */}
           {characters.length < MAX_CHARACTERS && (
             <div
-              className="group flex min-h-[480px] cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed border-white/10 bg-white/[0.02] transition-all duration-500 hover:border-primary/40 hover:bg-white/5"
+              className="group flex min-h-[320px] cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed border-white/10 bg-white/[0.02] transition-all duration-500 hover:border-primary/40 hover:bg-white/5 sm:min-h-[480px] sm:rounded-2xl"
               onClick={() => router.push("/characters/create")}
             >
-              <div className="mb-6 flex h-24 w-24 items-center justify-center rounded-3xl bg-white/5 transition-all duration-500 group-hover:bg-primary/20 group-hover:scale-110">
-                <Plus className="h-12 w-12 text-muted-foreground transition-colors group-hover:text-primary" />
+              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-white/5 transition-all duration-500 group-hover:bg-primary/20 group-hover:scale-110 sm:mb-6 sm:h-24 sm:w-24 sm:rounded-3xl">
+                <Plus className="h-8 w-8 text-muted-foreground transition-colors group-hover:text-primary sm:h-12 sm:w-12" />
               </div>
-              <h3 className="mb-2 text-xl font-semibold text-foreground">Create New Character</h3>
-              <p className="text-sm text-muted-foreground">
+              <h3 className="mb-1 text-base font-semibold text-foreground sm:mb-2 sm:text-xl">Create New Character</h3>
+              <p className="text-xs text-muted-foreground sm:text-sm">
                 {characters.length}/{MAX_CHARACTERS} slots used
               </p>
             </div>
@@ -354,10 +354,10 @@ export default function CharacterSelectPage() {
           <div className="flex justify-center animate-slide-up">
             <Button
               size="lg"
-              className="h-16 min-w-[320px] rounded-2xl bg-primary text-lg font-semibold shadow-2xl shadow-primary/40 hover:shadow-primary/50 transition-all hover:scale-105"
+              className="h-12 w-full max-w-[280px] rounded-xl bg-primary text-base font-semibold shadow-2xl shadow-primary/40 hover:shadow-primary/50 transition-all hover:scale-105 sm:h-16 sm:min-w-[320px] sm:rounded-2xl sm:text-lg"
               onClick={handlePlay}
             >
-              <Play className="mr-3 h-6 w-6" />
+              <Play className="mr-2 h-5 w-5 sm:mr-3 sm:h-6 sm:w-6" />
               Enter Los Santos
             </Button>
           </div>
@@ -366,8 +366,8 @@ export default function CharacterSelectPage() {
 
       {/* Footer */}
       <footer className="relative z-10 border-t border-white/5 mt-auto">
-        <div className="mx-auto max-w-7xl px-6 py-6">
-          <p className="text-center text-sm text-muted-foreground">
+        <div className="mx-auto max-w-7xl px-3 py-4 sm:px-6 sm:py-6">
+          <p className="text-center text-xs text-muted-foreground sm:text-sm">
             Lost Roleplay - San Andreas Multiplayer
           </p>
         </div>

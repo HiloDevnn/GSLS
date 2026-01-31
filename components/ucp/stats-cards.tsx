@@ -34,20 +34,20 @@ const stats = [
 
 export function StatsCards() {
   return (
-    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
       {stats.map((stat) => (
         <Card key={stat.label} className="border-border bg-card">
-          <CardContent className="p-5">
-            <div className="flex items-start justify-between">
-              <div>
-                <p className="text-sm text-muted-foreground">{stat.label}</p>
-                <p className="mt-1 text-2xl font-bold text-card-foreground">
+          <CardContent className="p-3 sm:p-5">
+            <div className="flex items-start justify-between gap-2">
+              <div className="min-w-0 flex-1">
+                <p className="truncate text-xs text-muted-foreground sm:text-sm">{stat.label}</p>
+                <p className="mt-1 truncate text-base font-bold text-card-foreground sm:text-xl lg:text-2xl">
                   {stat.value}
                 </p>
-                <p className="mt-1 text-xs text-accent">{stat.change}</p>
+                <p className="mt-1 truncate text-[10px] text-accent sm:text-xs">{stat.change}</p>
               </div>
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-                <stat.icon className="h-5 w-5 text-primary" />
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10 sm:h-10 sm:w-10">
+                <stat.icon className="h-4 w-4 text-primary sm:h-5 sm:w-5" />
               </div>
             </div>
           </CardContent>
